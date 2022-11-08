@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.StringRes
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -149,8 +150,9 @@ fun RoundTheTipRow(
     }
 }
 
-
-private fun calculateTip(
+// this makes the module public only for testing purposes (not for other modules)
+@VisibleForTesting
+internal fun calculateTip(
     amount: Double,
     tipPercent: Double,
     roundUp: Boolean
