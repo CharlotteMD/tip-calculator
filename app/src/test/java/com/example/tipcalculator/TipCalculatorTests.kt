@@ -15,4 +15,14 @@ class TipCalculatorTests {
         assertEquals(expectedTip, actualTip)
     }
 
+    @Test
+    fun calculate_20_percent_tip_with_roundup() {
+        var amount = 135.0
+        var tipPercent = 15.0
+        var expectedTip = "£21.00"
+
+        var actualTip = calculateTip(amount, tipPercent, true)
+        assertEquals(expectedTip, actualTip)
+    }
+
 }
